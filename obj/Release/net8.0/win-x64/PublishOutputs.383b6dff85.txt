@@ -1,0 +1,3 @@
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\publish\appsettings.json
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\publish\HardWareMonitorService.pdb
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\publish\HardWareMonitorService.exe
