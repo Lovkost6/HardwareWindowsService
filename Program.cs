@@ -13,6 +13,7 @@ builder.Services.AddWindowsService(options =>
 builder.Services.AddSingleton<HardwareService>();
 builder.Services.AddSingleton<ApiService>();
 builder.Services.AddSingleton<RegistryService>();
+builder.Services.AddSingleton<HardwareMonitoringService>();
 
 builder.Services.AddHostedService<Worker>();
 

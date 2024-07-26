@@ -10,6 +10,7 @@ public class Worker(
     HardwareService hardwareService,
     ApiService apiService,
     RegistryService registryService,
+    HardwareMonitoringService hardwareMonitoringService,
     ILogger<Worker> logger) : BackgroundService
 {
     private const string PathConfig = "C:\\Monitoring\\config.txt";
@@ -21,33 +22,29 @@ public class Worker(
             while (!stoppingToken.IsCancellationRequested)
             {
                 //Если у нас нет в реестре мы никак это не фиксим
-                var userPcId = registryService.GetUserPcId() ?? hardwareService.GetUserPCId();
+                var userPcId = registryService.GetUserPcId();
+                if (userPcId == null)
+                {
+                    userPcId = hardwareService.GetUserPCId();
+                    registryService.CreateRegistry(userPcId);
+                }
+
                 var isUserExist = await apiService.IsUserExist(userPcId);
-                
+
 
                 if (isUserExist)
                 {
                     Console.WriteLine("Я заглушка в подключению к хабу");
                     await apiService.ConnectHub(userPcId);
-                    while (true)
-                    {
-                        
-                    }
+                    await Task.Delay(Timeout.Infinite, stoppingToken);
                 }
                 else
                 {
                     var userPc = hardwareService.GetUserPc();
                     userPc.Id = userPcId;
-                    var isCreated = await apiService.CreateUser(userPc);
-                    registryService.CreateRegistry(userPcId);
-                    if (isCreated)
-                    {
-                        //хаб коннектн
-                    }
-                    else
-                    {
-                        //Чето с ошибкой
-                    }
+                    await apiService.CreateUser(userPc);
+                    await apiService.ConnectHub(userPcId);
+                    await Task.Delay(Timeout.Infinite, stoppingToken);
                 }
             }
         }
