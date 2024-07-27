@@ -236,3 +236,16 @@ D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\msco
 D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\mscordbi.dll
 D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\mscorrc.dll
 D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\msquic.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.Http.Connections.Client.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.SignalR.Client.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.SignalR.Client.Core.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.SignalR.Common.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\Microsoft.Extensions.Features.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\System.Configuration.ConfigurationManager.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\System.Diagnostics.PerformanceCounter.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\System.IO.Pipelines.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\bin\Release\net8.0\win-x64\System.Security.Cryptography.ProtectedData.dll
+D:\RiderProjects\HardWare\HardWareMonitorService\obj\Release\net8.0\win-x64\HardWareMonitorService.sourcelink.json

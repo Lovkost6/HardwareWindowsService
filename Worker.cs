@@ -9,12 +9,8 @@ namespace HardWareMonitorService;
 public class Worker(
     HardwareService hardwareService,
     ApiService apiService,
-    RegistryService registryService,
-    HardwareMonitoringService hardwareMonitoringService,
-    ILogger<Worker> logger) : BackgroundService
+    RegistryService registryService) : BackgroundService
 {
-    private const string PathConfig = "C:\\Monitoring\\config.txt";
-
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         try
@@ -30,7 +26,6 @@ public class Worker(
                 }
 
                 var isUserExist = await apiService.IsUserExist(userPcId);
-
 
                 if (isUserExist)
                 {
@@ -50,11 +45,9 @@ public class Worker(
         }
         catch (OperationCanceledException e)
         {
-            logger.LogError(e.Message);
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "{Message}", ex.Message);
             Environment.Exit(1);
         }
     }

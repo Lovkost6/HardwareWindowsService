@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2aqz0jDXbeDSGMBLOWGhaFwm0dZzwXkX8riRcfc6jyMKmyygjdqFL4tRM9nEPpd0UfkgF+g4cGfqm7y6o/LaWA==",
+  "dgSpecHash": "lTfB5tv+mBs33sryOE4E4vGnCG978GqaKfKcP/V4wh2QabPC49hp61BvxE+G2azyB/K0vB2fhr/CWlrcIhgPPw==",
   "success": true,
   "projectFilePath": "D:\\RiderProjects\\HardWare\\HardWareMonitorService\\HardWareMonitorService.csproj",
   "expectedPackageFiles": [
@@ -65,7 +65,7 @@
     "C:\\Users\\Lovkost\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Lovkost\\.nuget\\packages\\system.serviceprocess.servicecontroller\\8.0.0\\system.serviceprocess.servicecontroller.8.0.0.nupkg.sha512",
     "C:\\Users\\Lovkost\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\Lovkost\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\Lovkost\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\Lovkost\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512"
   ],
   "logs": []

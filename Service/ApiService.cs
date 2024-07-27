@@ -4,7 +4,7 @@ using System.Text.Json;
 using HardWareMonitorService.Entity;
 using HardWareMonitorService.Utils;
 using Microsoft.AspNetCore.SignalR.Client;
-using Mono.Unix.Native;
+
 
 namespace HardWareMonitorService.Service;
 
@@ -29,10 +29,20 @@ public class ApiService
             .WithAutomaticReconnect(new CustomRetryPolicy())
             .Build();
 
-        hubConnection.On("GetUserPcId", () =>
+        hubConnection.On("GetUserPcId", async () =>
         {
             Console.WriteLine(hubConnection.ConnectionId);
-            hubConnection.SendAsync("Init", userPcId);
+            Console.WriteLine(userPcId);
+            try
+            {
+                await hubConnection.SendAsync("Init", userPcId);
+                Console.WriteLine("Запрос Init отправлен");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при отправке запроса: " + ex.Message);
+            }
+            // await hubConnection.SendAsync("Init", userPcId);
         });
 
         hubConnection.On("GetUserRTInfo", async () =>
@@ -45,7 +55,9 @@ public class ApiService
                 while (!token.IsCancellationRequested)
                 {
                     Console.WriteLine("Я отправляю данные");
-                    await hubConnection.SendAsync("Monitoring", hardwareMonitoringService.GetPcRTInfo(),
+                    var serializePcInfo = JsonSerializer.Serialize(hardwareMonitoringService.GetPcRTInfo(), JsonContext.Default.PcMonitoringInfo);
+                    // Console.WriteLine(serializePcInfo);
+                    await hubConnection.SendAsync("Monitoring", serializePcInfo,
                         cancellationToken: token);
                     await Task.Delay(1000, token);
                 }
@@ -57,7 +69,6 @@ public class ApiService
             Console.WriteLine("все я не отправляю мониторинг");
             source.Cancel();
         });
-
         await hubConnection.StartAsync();
     }
 
@@ -92,7 +103,7 @@ public class ApiService
     }
 
     public async Task<bool> CreateUser(UserPc userPc)
-    {
+    { 
         var json = JsonSerializer.Serialize(userPc);
         var jsonContent = new StringContent(content: json, Encoding.UTF8, "application/json");
         HttpClient httpClient = new HttpClient();

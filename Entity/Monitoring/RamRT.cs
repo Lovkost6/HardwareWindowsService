@@ -1,4 +1,6 @@
-﻿namespace HardWareMonitorService.Entity.Monitoring;
+﻿using System.Text.Json.Serialization;
+
+namespace HardWareMonitorService.Entity.Monitoring;
 
 public class RamRT
 {
